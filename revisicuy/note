@@ -1,0 +1,54 @@
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-icon" data-icon="dashboard"><i class="ph ph-house"></i></div>
+        <div class="sidebar-icon" data-icon="stats"><i class="ph ph-chart-bar"></i></div>
+        <div class="sidebar-icon" data-icon="orders"><i class="ph ph-note"></i></div>
+        <div class="sidebar-icon" data-icon="payments"><i class="ph ph-credit-card"></i></div>
+        <div class="sidebar-icon active" data-icon="users"><i class="ph ph-user"></i></div>
+    </aside>
+
+    <!-- Navbar untuk Mobile -->
+    <div class="mobile-navbar">
+        <div class="mobile-icon" data-icon="dashboard"><i class="ph ph-house"></i></div>
+        <div class="mobile-icon" data-icon="stats"><i class="ph ph-chart-bar"></i></div>
+        <div class="mobile-icon" data-icon="orders"><i class="ph ph-note"></i></div>
+        <div class="mobile-icon" data-icon="payments"><i class="ph ph-credit-card"></i></div>
+        <div class="mobile-icon active" data-icon="users"><i class="ph ph-user"></i></div>
+    </div>
+
+    <!-- Users Content -->
+    <div class="container">
+        <main id="users" class="content-section">
+            <header>
+                <div class="top-bar-users">
+                    <div class="users-header">
+                        <h1>Users</h1>
+                    </div>
+                    <img src="../images/logo.jpg" alt="Profile" class="profile-img">
+                </div>
+                <hr class="divider">
+            </header>
+         <!-- Profile Section -->
+         <section class="profile-section">
+            <div class="profile-info">
+                <div class="info-item">
+                    <input type="text" id="customer-name" value="John Doe" readonly class="profile-input">
+                </div>
+                <div class="info-item">
+                    <input type="email" id="customer-email" value="johndoe@example.com" readonly class="profile-input">
+                </div>
+                <div class="info-item">
+                    <input type="tel" id="customer-phone" value="+62 812 3456 7890" readonly class="profile-input">
+                </div>
+                <div class="info-item">
+                    <input type="text" id="customer-member-since" value="January 2023" readonly class="profile-input">
+                </div>
+            </div>
+        </section>
+           <!-- Edit and Logout Actions -->
+            <div class="actions">
+                <button class="btn" id="edit-profile">Edit Profile</button>
+                <button class="btn logout" id="logout">Logout</button>
+            </div>
+        </main>
+    </div>

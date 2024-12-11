@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kala Senja Coffee</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+          a{
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+     <!-- Tambahin Quanti -->
+<aside class="cart-panel hidden" id="cart-panel">
+    <div class="cart-header">
+        <h2>Cart</h2>
+        <input type="text" id="buyer-name" placeholder="Masukkan Nama Pembeli" style="background-color: #2a2d3a; color: #fff; padding: 0.25rem 0.5rem; border: none; border-radius: 0.25rem;">
+    </div>
+            <!-- Dine In / Take Away Section -->
+    <div class="payment-type">
+        <label for="service-type">Service Type:</label>
+        <div class="payment-option" data-type="dine-in">
+            <h4>Dine In</h4>
+        </div>
+        <div class="payment-option" data-type="take-away">
+            <h4>Take Away</h4>
+        </div>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-total">
+        <p>Subtotal: <span id="cart-subtotal">Rp. 0</span></p>
+
+        <!-- Customer Payment -->
+        <div class="payment-section">
+            <label for="customer-payment">Customer Payment:</label>
+            <input type="number" id="customer-payment" placeholder="Enter amount">
+        </div>
+        <p>Change: <span id="change-amount">Rp. 0</span></p>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</aside>
+</body>
+</html>

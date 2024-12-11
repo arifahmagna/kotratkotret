@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kala Senja Coffee</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+          a{
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+        <a href="../costumer/cust_home.html">
+                <div class="sidebar-icon active" data-icon="home"><i class="ph ph-house"></i></div>
+            </a>
+            <a href="../costumer/cust_history.html">
+                <div class="sidebar-icon" data-icon="payments"><i class="ph ph-clock-counter-clockwise"></i></div>
+            </a>
+            <a href="../costumer/cust_profile.html">
+                <div class="sidebar-icon" data-icon="users"><i class="ph ph-user"></i></div>
+            </a>
+            <a href="../fungsi/logout.php">
+                <div class="sidebar-icon" data-icon="logout"><i class="ph ph-sign-out"></i></div>
+            </a>
+        </aside>
+
+    <!-- Navbar untuk Mobile -->
+    <div class="mobile-navbar">
+
+        <aside class="sidebar">
+            <a href="../costumer/cust_home.html">
+                    <div class="sidebar-icon active" data-icon="home"><i class="ph ph-house"></i></div>
+                </a>
+                <a href="../costumer/cust_history.html">
+                    <div class="sidebar-icon" data-icon="payments"><i class="ph ph-clock-counter-clockwise"></i></div>
+                </a>
+                <a href="../costumer/cust_profile.html">
+                    <div class="sidebar-icon" data-icon="users"><i class="ph ph-user"></i></div>
+                </a>
+                <a href="../fungsi/logout.php">
+                    <div class="sidebar-icon" data-icon="logout"><i class="ph ph-sign-out"></i></div>
+                </a>
+            </aside>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="container">
+        <main id="dashboard" class="content-section active">
+            <header>
+                <div class="top-bar">
+                    <div class="kala-senja">
+                        <h1>Kala Senja Coffee</h1>
+                        <p class="timestamp" id="timestamp"></p>
+                    </div>
+                    <img src="../images/logo.jpg" alt="Profile" class="profile-img">
+                </div>
+                <div>
+                    <div class="menu-nav">
+                        <nav class="container-nav-item">
+                            <a href="#" class="nav-item active" data-category="All">All</a>
+                            <a href="#" class="nav-item" data-category="Food">Food</a>
+                            <a href="#" class="nav-item" data-category="Beverage">Beverage</a>
+                        </nav>
+                        <div style="flex-basis:30rem"></div>
+                    </div>
+                    <h2>Choose Dishes</h2>
+                </div>
+            </header>
+            <div class="dishes-grid" id="dishes-container">
+                <!-- Dish Cards -->
+                <div class="dish-card" data-category="Food">
+                    <img src="../images/logo.jpg" alt="Dish" class="dish-img">
+                    <h3>Dish Name</h3>
+                    <p class="price">Rp. 50,000</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+                <div class="dish-card" data-category="Beverage">
+                    <img src="../images/logo.jpg" alt="Dish" class="dish-img">
+                    <h3>Beverage Name</h3>
+                    <p class="price">Rp. 30,000</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+                <div class="dish-card" data-category="Food">
+                    <img src="../images/logo.jpg" alt="Dish" class="dish-img">
+                    <h3>Food Name</h3>
+                    <p class="price">Rp. 40,000</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+                <div class="dish-card" data-category="Beverage">
+                    <img src="../images/logo.jpg" alt="Dish" class="dish-img">
+                    <h3>Coffee Name</h3>
+                    <p class="price">Rp. 25,000</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

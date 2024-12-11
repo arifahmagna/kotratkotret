@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kala Senja Coffee</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+          a{
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+        <a href="../costumer/cust_home.html">
+                <div class="sidebar-icon " data-icon="home"><i class="ph ph-house"></i></div>
+            </a>
+            <a href="../costumer/cust_history.html">
+                <div class="sidebar-icon" data-icon="payments"><i class="ph ph-clock-counter-clockwise"></i></div>
+            </a>
+            <a href="../costumer/cust_profile.html">
+                <div class="sidebar-icon active" data-icon="users"><i class="ph ph-user"></i></div>
+            </a>
+            <a href="../fungsi/logout.php">
+                <div class="sidebar-icon" data-icon="logout"><i class="ph ph-sign-out"></i></div>
+            </a>
+        </aside>
+
+    <!-- Navbar untuk Mobile -->
+    <div class="mobile-navbar">
+
+        <a href="../costumer/cust_home.html">
+            <div class="sidebar-icon " data-icon="home"><i class="ph ph-house"></i></div>
+        </a>
+        <a href="../costumer/cust_history.html">
+            <div class="sidebar-icon" data-icon="payments"><i class="ph ph-clock-counter-clockwise"></i></div>
+        </a>
+        <a href="../costumer/cust_profile.html">
+            <div class="sidebar-icon active" data-icon="users"><i class="ph ph-user"></i></div>
+        </a>
+        <a href="../fungsi/logout.php">
+            <div class="sidebar-icon" data-icon="logout"><i class="ph ph-sign-out"></i></div>
+        </a>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="container">
+        <main id="users" class="content-section active">
+            <header>
+                <div class="top-bar-users">
+                    <div class="users-header">
+                        <h1>Costumer Profile</h1>
+                    </div>
+                    <img src="../images/logo.jpg" alt="Profile" class="profile-img">
+                </div>
+                <hr class="divider">
+            </header>
+             <!-- Profile Section -->
+         <section class="profile-section">
+            <div class="profile-info">
+                <div class="info-item">
+                    <input type="text" id="customer-name" value="John Doe" readonly class="profile-input">
+                </div>
+                <div class="info-item">
+                    <input type="email" id="customer-email" value="johndoe@example.com" readonly class="profile-input">
+                </div>
+                <div class="info-item">
+                    <input type="tel" id="customer-phone" value="+62 812 3456 7890" readonly class="profile-input">
+                </div>
+                <div class="info-item">
+                    <input type="text" id="customer-member-since" value="January 2023" readonly class="profile-input">
+                </div>
+            </div>
+        </section>
+        <!-- Edit and Logout Actions -->
+        <div class="actions">
+            <button class="btn" id="edit-profile">Edit Profile</button>
+            <button class="btn logout" id="logout">Logout</button>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kala Senja Coffee</title>
+    <link rel="stylesheet" href="../css/user_dashboard.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <!-- Sidebar untuk Desktop -->
+    <aside class="sidebar">
+        <div class="sidebar-icon active" data-icon="dashboard"><i class="ph ph-house"></i></div>
+        <div class="sidebar-icon" data-icon="stats"><i class="ph ph-chart-bar"></i></div>
+        <div class="sidebar-icon" data-icon="orders"><i class="ph ph-note"></i></div>
+        <div class="sidebar-icon" data-icon="payments"><i class="ph ph-credit-card"></i></div>
+        <div class="sidebar-icon" data-icon="users"><i class="ph ph-user"></i></div>
+    </aside>
+
+    <!-- Navbar untuk Mobile -->
+    <div class="mobile-navbar">
+        <div class="mobile-icon active" data-icon="dashboard"><i class="ph ph-house"></i></div>
+        <div class="mobile-icon" data-icon="stats"><i class="ph ph-chart-bar"></i></div>
+        <div class="mobile-icon" data-icon="orders"><i class="ph ph-note"></i></div>
+        <div class="mobile-icon" data-icon="payments"><i class="ph ph-credit-card"></i></div>
+        <div class="mobile-icon" data-icon="users"><i class="ph ph-user"></i></div>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Dashboard Section -->
+        <main id="dashboard" class="content-section active">
+            <header>
+                <div class="top-bar">
+                    <div class="kala-senja">
+                        <h1>Kala Senja Coffee</h1>
+                        <p class="timestamp" id="timestamp"></p>
+                    </div>
+                    <img src="../images/logo.jpg" alt="Profile" class="profile-img">
+                </div>
+                <div>
+                    <div class="menu-nav">
+                        <nav class="container-nav-item">
+                            <a href="#" class="nav-item active" data-category="All">All</a>
+                            <a href="#" class="nav-item" data-category="Food">Food</a>
+                            <a href="#" class="nav-item" data-category="Beverage">Beverage</a>
+                        </nav>
+                        <div style="flex-basis:30rem"></div>
+                    </div>
+                    <h2>Choose Dishes</h2>
+                </div>
+            </header>
+            <div class="dishes-grid" id="dishes-container">
+                <!-- Dish Cards -->
+                <div class="dish-card" data-category="Food">
+                    <img src="../images/logo.jpg" alt="Dish" class="dish-img">
+                    <h3>Dish Name</h3>
+                    <p class="price">Rp. 50,000</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+                <div class="dish-card" data-category="Beverage">
+                    <img src="../images/logo.jpg" alt="Dish" class="dish-img">
+                    <h3>Beverage Name</h3>
+                    <p class="price">Rp. 30,000</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+                <div class="dish-card" data-category="Food">
+                    <img src="../images/logo.jpg" alt="Dish" class="dish-img">
+                    <h3>Food Name</h3>
+                    <p class="price">Rp. 40,000</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+                <div class="dish-card" data-category="Beverage">
+                    <img src="../images/logo.jpg" alt="Dish" class="dish-img">
+                    <h3>Coffee Name</h3>
+                    <p class="price">Rp. 25,000</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Stats Section -->
+         <!-- Ubah Tabelnya jadi menu yang terjual qty dan harga-->
+        <main id="stats" class="content-section">
+            <header>
+                <div class="top-bar-stats">
+                    <div class="stats-header">
+                         <h1>Sales Report</h1>
+                         <p class="timestamp" id="timestamp"></p>
+                    </div>
+                    <img src="../images/logo.jpg" alt="Profile" class="profile-img">
+                </div>
+                <hr class="divider">
+            </header>
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <h3>Total Earnings</h3>
+                    <p id="total-earnings">Rp. 0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Weekly Sales</h3>
+                    <p id="weekly-sales">Rp. 0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Monthly Sales</h3>
+                    <p id="monthly-sales">Rp. 0</p>
+                </div>
+            </div>
+            <div class="sales-report">
+                <h2>Sales Report</h2>
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sales-report-body"></tbody>
+                </table>
+                <button class="btn" id="download-pdf-btn">Cetak PDF</button>
+            </div>
+        </main>
+
+        <!-- Orders Section -->
+         <!-- history order kasih filter -->
+        <main id="orders" class="content-section">
+            <header>
+                <div class="top-bar-order">
+                    <div class="history-order">
+                        <h1>History Order</h1>
+                        <p class="timestamp" id="timestamp"></p>
+                    </div>
+                    <img src="../images/logo.jpg" alt="Profile" class="profile-img">
+                </div>
+                <hr class="divider">
+            </header>
+            <div class="dashboard-history">
+                <div class="overall-stats">
+                    <div class="income-card">
+                        <i class="ph ph-money"></i>
+                        <p>Rp. 0</p>
+                        <h3>Total Income</h3>
+                    </div>
+                    <div class="order-card">
+                        <i class="ph ph-package"></i>
+                        <p>0</p>
+                        <h3>Total Order</h3>
+                    </div>
+                    <div class="customer-card">
+                        <i class="ph ph-users"></i>
+                        <p>0</p>
+                        <h3>Total Customer</h3>
+                    </div>
+                </div>
+                <div class="order-report">
+                    <select class="filter-select">
+                        <option  class="filter-daily" value="Daily">Daily</option>
+                        <option class="filter-weekly" value="Weekly">Weekly</option>
+                        <option class="filter-monthly" value="Monthly">Monthly</option>
+                    </select>
+                    <table class="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Date Time</th>
+                                <th>Total Payment</th>
+                                <th>Status</th>
+                                <th>Metode Pembayaran</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Magna</td>
+                                <td>2024-11-17 14:30</td>
+                                <td>Rp. 150,000</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option  class="status-paid" value="Paid">Paid</option>
+                                        <option class="status-unpaid" value="Unpaid">Unpaid</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    Qris
+                                </td>
+                                <td><a href="#">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>Delia</td>
+                                <td>2024-11-17 14:30</td>
+                                <td>Rp. 150,000</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option  class="status-paid" value="Paid">Paid</option>
+                                        <option class="status-unpaid" value="Unpaid">Unpaid</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    BCA
+                                </td>
+                                <td><a href="#">View Details</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- Payments Section -->
+         <!-- Tambahin Crud -->
+        <main id="payments" class="content-section">
+            <header>
+                <div class="top-bar-payment">
+                    <div class="payment-header">
+                         <h1>Payments Overview</h1>
+                         <p class="timestamp" id="timestamp"></p>
+                    </div>
+                    <img src="../images/logo.jpg" alt="Profile" class="profile-img">
+                </div>
+                <hr class="divider">
+            </header>
+            <div class="income-overview">
+                <div class="payment-card" id="income-bca" style="background-color: #1454fb; justify-content: space-between;">
+                    <h3 style="font-size: 3rem;">BCA</h3>
+                    <p class="rekening">No. Rekening: 123456789</p>
+                    <p id="bca-income">Rp. 0</p>
+                </div>
+                <div class="payment-card" id="income-cash" style="background-color: green;">
+                    <h3 style="font-size: 3rem;">Cash</h3>
+                    <p id="cash-income">Rp. 0</p>
+                </div>
+                <div class="payment-card" id="income-qris" style="background-color: rgb(255, 13, 0);">
+                    <h3 style="font-size: 3rem;">QRIS</h3>
+                    <p id="qris-income">Rp. 0</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Users Section -->
+        <main id="users" class="content-section">
+            <header>
+                <div class="top-bar-users">
+                    <div class="users-header">
+                        <h1>Users</h1>
+                        <p class="timestamp" id="timestamp"></p>
+                    </div>
+                    <img src="../images/logo.jpg" alt="Profile" class="profile-img">
+                </div>
+                <hr class="divider">
+            </header>
+        </main>
+    </div>
+    
+<!-- Cart Panel (Desktop View) -->
+ <!-- Tambahin Quanti -->
+<aside class="cart-panel hidden" id="cart-panel">
+    <div class="cart-header">
+        <h2>Cart</h2>
+        <input type="text" id="buyer-name" placeholder="Masukkan Nama Pembeli" style="background-color: #2a2d3a; color: #fff; padding: 0.25rem 0.5rem; border: none; border-radius: 0.25rem;">
+    </div>
+            <!-- Dine In / Take Away Section -->
+    <div class="payment-type">
+        <label for="service-type">Service Type:</label>
+        <div class="payment-option" data-type="dine-in">
+            <h4>Dine In</h4>
+        </div>
+        <div class="payment-option" data-type="take-away">
+            <h4>Take Away</h4>
+        </div>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-total">
+        <p>Subtotal: <span id="cart-subtotal">Rp. 0</span></p>
+
+        <!-- Payment Method Section -->
+        <div class="payment-type">
+            <label for="payment-method">Payment Method:</label>
+            <div class="payment-option" data-method="bca">
+                <h4>BCA</h4>
+            </div>
+            <div class="payment-option" data-method="qris">
+                <h4>QRIS</h4>
+            </div>
+            <div class="payment-option" data-method="cash">
+                <h4>Cash</h4>
+            </div>
+        </div>
+
+        <!-- Customer Payment -->
+        <div class="payment-section">
+            <label for="customer-payment">Customer Payment:</label>
+            <input type="number" id="customer-payment" placeholder="Enter amount">
+        </div>
+        <p>Change: <span id="change-amount">Rp. 0</span></p>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</aside>
+
+<!-- Mobile Cart Page -->
+<main id="mobile-cart" class="content-section">
+    <header>
+        <div class="top-bar">
+            <div class="kala-senja">
+                <h1>Cart</h1>
+            </div>
+            <button class="close-cart-btn" id="close-mobile-cart-btn">✖</button>
+        </div>
+    </header>
+    <div class="cart-items" id="mobile-cart-items"></div>
+    <div class="cart-total">
+        <p>Subtotal: <span id="mobile-cart-subtotal">Rp. 0</span></p>
+        <!-- Dine In / Take Away Section -->
+        <div class="payment-type">
+            <label for="service-type">Service Type:</label>
+            <div class="payment-option" data-type="dine-in">
+                <h4>Dine In</h4>
+            </div>
+            <div class="payment-option" data-type="take-away">
+                <h4>Take Away</h4>
+            </div>
+        </div>
+        <!-- Payment Method Section -->
+        <div class="payment-type">
+            <label for="payment-method">Payment Method:</label>
+            <div class="payment-option" data-method="bca">
+                <h4>BCA</h4>
+            </div>
+            <div class="payment-option" data-method="qris">
+                <h4>QRIS</h4>
+            </div>
+            <div class="payment-option" data-method="cash">
+                <h4>Cash</h4>
+            </div>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</main>
+
+
+    <!-- Cart Button for Mobile -->
+    <button class="mobile-cart-btn hidden" id="mobile-cart-btn">Cart</button>
+
+    <!-- Script -->
+    <script src="../js/user_dashboard.js"></script>
+</body>
+</html>
