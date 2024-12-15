@@ -1,0 +1,975 @@
+/* Reset dan Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #1a1b23;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* All rounder */
+.timestamp {
+    text-align: left; /* Posisi di kanan bawah */
+    font-size: 1.2rem; /* Ukuran teks kecil */
+    color: #959595; /* Warna abu-abu */
+    margin-top: 0.5rem; /* Jarak dari divider */
+    font-style: italic; /* Gaya miring untuk estetika */
+}
+
+/* Kontainer Utama */
+.container {
+    display: flex; /* Menggunakan Flexbox */
+    flex-direction: row; /* Elemen diatur secara horizontal */
+    height: 100vh; /* Tinggi penuh layar */
+    width: 100%; /* Lebar penuh layar */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 7rem; /* Sidebar tetap berukuran tetap */
+    background-color: #22242f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    gap: 3rem  ;
+    border-radius: 0rem 2rem 2rem 0rem;
+}
+
+.sidebar-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #2a2d3a;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff6b6b;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-icon.active {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.sidebar-icon:hover {
+    background-color: #ff4b4b;
+    color: white;
+}
+
+/* Mobile Navbar */
+.mobile-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4rem;
+    background-color: #22242f;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+}
+
+.mobile-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mobile-icon.active {
+    color: #ff6b6b;
+}
+
+.mobile-icon:hover {
+    color: #ff4b4b;
+}
+
+/* Dashboard Section */
+.content-section {
+    flex-grow: 1; /* Mengisi seluruh ruang yang tersisa */
+    background-color: #1a1b23;
+    display: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-y: auto; /* Scroll jika konten terlalu banyak */
+}
+
+.content-section.active {
+    display: block; /* Tampilkan hanya halaman yang aktif */
+}
+
+/* Bagian Header */
+header {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.container-menu-nav {
+    display: flex;
+    flex-direction: column;
+}
+.menu-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-bar {
+    background-color: #2a2d3a;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    width: 20rem;
+    margin-bottom: 1rem;
+}
+
+/* Navigasi */
+nav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav a.active {
+    color: #ff6b6b;
+    border-bottom: 2px solid #ff6b6b;
+}
+
+/* Grid Dishes */
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.dish-card {
+    background-color: #22242f;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.dish-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+@media (max-width: 600px) {
+    .dishes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(125px, 1fr)); /* Two times smaller */
+    }
+
+    .dish-img {
+        width: 75px; /* 2x smaller for mobile */
+        height: 75px; /* 2x smaller for mobile */
+    }
+   }
+
+/* Tombol Tambah Keranjang */
+.add-cart-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+/* Cart Panel */
+.cart-panel {
+    width: 25rem; /* Lebar tetap */
+    background-color: #22242f;
+    height: 100vh; /* Tinggi penuh layar */
+    padding: 1rem;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Tambahkan scroll jika konten terlalu banyak */
+}
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #2a2d3a;
+    border-radius: 0.5rem;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.payment-section {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.payment-section label {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.payment-section input {
+    background-color: #2a2d3a;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+.payment-type {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.payment-type label {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.payment-type select {
+    background-color: #2a2d3a;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+
+.cart-total {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #2a2d3a;
+}
+
+.checkout-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.price {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+/* Tombol Hapus (tongsampah) pada setiap item cart */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #2a2d3a;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.cart-item .remove-item-btn {
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    font-size: 1.5rem;
+    cursor: pointer;
+    top: 0.5rem;
+    right: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.cart-item .remove-item-btn:hover {
+    color: #ff4b4b;
+}
+/* Payment Type Section (Dine In, Take Away, Payment Method) */
+.payment-type {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+/* Kartu Dine In / Take Away */
+.payment-option {
+    background-color: #2a2d3a;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: white;
+}
+
+.payment-option:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.05);
+}
+
+.payment-option.active {
+    background-color: #ff6b6b;
+}
+
+/* Metode Pembayaran */
+.payment-option h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#dine-in, #take-away, #bca, #qris, #cash {
+    width: 100%; /* Memastikan kartu ini lebar penuh */
+}
+
+/* Halaman Cart untuk Mobile */
+@media (max-width: 768px) {
+    /* Responsif untuk Mobile */
+    .sidebar {
+        display: none; /* Sembunyikan sidebar di mobile */
+    }
+
+    .mobile-navbar {
+        display: flex; /* Tampilkan navbar di mobile */
+    }
+
+    /* Halaman Cart Mobile */
+    #mobile-cart {
+        display: none; /* Sembunyikan secara default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #22242f;
+        padding: 2rem;
+        overflow-y: auto;
+        z-index: 1001;
+    }
+
+    #mobile-cart.active {
+        display: block; /* Tampilkan saat aktif */
+    }
+
+    /* Tombol Cart Mobile */
+    .mobile-cart-btn {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: #ff6b6b;
+        color: white;
+        padding: 1rem;
+        border: none;
+        border-radius: 50%;
+        font-size: 1rem;
+        font-weight: bold;
+        z-index: 1001;
+        margin-bottom: 3.5rem;
+    }
+
+    .mobile-cart-btn.hidden {
+        display: none;
+    }
+
+    /* Menyembunyikan cart-panel pada perangkat mobile */
+    .cart-panel {
+        display: none;
+    }
+
+    /* Panel Cart Mobile */
+    .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .close-cart-btn {
+        cursor: pointer;
+        color: #ff6b6b;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+    }
+
+    /* Cart Items di Mobile */
+    .cart-items {
+        margin-bottom: 1.5rem;
+    }
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        background-color: #2a2d3a;
+        border-radius: 0.5rem;
+    }
+
+    .cart-item img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* Subtotal dan Checkout */
+    .cart-total {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #2a2d3a;
+    }
+
+    .checkout-btn {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+
+    .price {
+        color: #ff6b6b;
+        font-weight: bold;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (min-width: 769px) {
+    .cart-panel {
+        display: block; /* Cart panel harus tetap terlihat pada desktop */
+    }
+
+    .mobile-cart-btn {
+        display: none; /* Sembunyikan tombol Cart pada desktop */
+    }
+}
+
+/* History Order */
+.history-order{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.top-bar-order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 0;
+    width: 100%;
+}
+
+.overall-stats {
+    display: flex; /* Flexbox untuk tata letak baris */
+    justify-content: space-between; /* Menyebar kartu secara merata */
+    gap: 1rem; /* Jarak antar kartu */
+    padding: 1rem; /* Padding di sekitar container */
+    flex-wrap: wrap; /* Membuat kartu responsif saat ukuran layar kecil */
+}
+
+.income-card, .order-card, .customer-card {
+    background-color: #22242f; /* Warna latar belakang kartu */
+    border-radius: 8px; /* Sudut melengkung */
+    padding: 1rem; /* Padding di dalam kartu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    width: 30%; /* Lebar kartu */
+    text-align: center; /* Teks rata tengah */
+    transition: transform 0.3s ease; /* Animasi saat hover */
+    display: flex;
+    flex-direction: column; /* Susun elemen secara vertikal */
+    align-items: center; /* Rata tengah secara horizontal */
+}
+
+.income-card i, .order-card i, .customer-card i {
+    font-size: 3rem; /* Ukuran besar untuk ikon */
+    color: #2196F3; /* Warna ikon biru */
+    margin-bottom: 1rem; /* Jarak antara ikon dan angka */
+}
+
+.income-card h3, .order-card h3, .customer-card h3 {
+    font-size: 1.25rem; /* Ukuran font judul */
+    color: #fff; /* Warna teks */
+    margin-top: 0.5rem; /* Jarak antara angka dan judul */
+}
+
+.income-card p, .order-card p, .customer-card p {
+    font-size: 1.5rem; /* Ukuran font angka */
+    font-weight: bold; /* Tebalkan angka */
+    color: #2196F3; /* Warna biru untuk angka */
+}
+
+/* Tabel History Transaksi */
+.order-report {
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.order-report h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+.filter-select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.transaction-table th, .transaction-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #22242f;
+}
+
+.transaction-table th {
+    background-color: #22242f;
+    color: white;
+    font-weight: bold;
+}
+
+.transaction-table td {
+    background-color:#22242f;
+}
+
+.status-select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 80%;
+    cursor: pointer;
+}
+
+/* Sales Report */
+.stats-header{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.top-bar-stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 0;
+    width: 100%;
+}
+
+.stats-overview {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background-color: #22242f;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    flex: 1 1 200px; /* Setiap kartu dapat mengembang hingga 200px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.stat-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2196F3;
+}
+
+.sales-report {
+    margin-top: 2rem;
+}
+
+.sales-report h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transaction-table th, .transaction-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #22242f;
+}
+
+.transaction-table th {
+    background-color: #22242f;
+    color: white;
+    font-weight: bold;
+}
+
+.transaction-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.transaction-table .completed {
+    color: green;
+}
+
+.transaction-table .pending {
+    color: orange;
+}
+
+#download-pdf-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+#download-pdf-btn:hover {
+    background-color: #ff4b4b;
+}
+/* Income Overview Section */
+.income-overview {
+    display: flex;
+    gap: 2rem;
+    justify-content: center; /* Pusatkan kartu secara horizontal */
+    align-items: center;
+    flex-wrap: wrap; /* Membuat fleksibel untuk layar kecil */
+    margin-bottom: 2rem;
+    flex-direction: column;
+}
+
+.payment-header{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.top-bar-payment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-card {
+    border-radius: 8px;
+    padding: 5rem;
+    width: 40rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.payment-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.payment-card h3 {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.payment-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* Warna hijau untuk angka pemasukan */
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 0;
+    width: 100%;
+}
+
+/* User Section */
+.users-header{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.top-bar-users{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+/* Users Table Styling */
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.users-table th,
+.users-table td {
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    border-bottom: 1px solid #2a2d3a;
+}
+
+.users-table th {
+    font-size: 1.2rem;
+    background-color: #2a2d3a;
+}
+
+.users-table td {
+    font-size: 1rem;
+}
+
+.users-table tr:hover {
+    background-color: #2a2d3a;
+    transition: background-color 0.3s ease;
+}
+
+/* Action Button Styling */
+.add-user-btn {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-user-btn:hover {
+    background-color: #ff4b4b;
+}
+
+.add-user-btn:focus {
+    outline: none;
+}
+/* Styling for User Info Container */
+#user-info-container {
+    background-color: #2a2d3a;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#user-info-container p {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+#user-info-container p strong {
+    color: #ff6b6b;
+}
+
+#user-info-container span {
+    color: #b8b8b8;
+}
+
+#edit-user-btn {
+    display: inline-block;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+#edit-user-btn:hover {
+    background-color: #ff4b4b;
+}
+
+#edit-user-btn:focus {
+    outline: none;
+}
+/* Info Item */
+.info-item {
+    margin-bottom: 20px; /* Jarak lebih besar untuk tampilan lebih rapi */
+}
+
+/* Container untuk profil */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #121212; /* Background yang gelap */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Gambar profil */
+.profile-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+   
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+}
+
+.choose-file {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* Form dan keterangan */
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-details label {
+    display: block;
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+.profile-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #2a2d3a;
+    margin-bottom: 15px;
+}
+
+/* Tombol di user  */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
