@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Pesanan - <?= htmlspecialchars($order['order_id']) ?></title>
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/simplex/bootstrap.min.css"
+    integrity="sha384-FYrl2Nk72fpV6+l3Bymt1zZhnQFK75ipDqPXK0sOR0f/zeOSZ45/tKlsKucQyjSp" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @media print {
+      body {
+        width: 21cm;
+        height: 29.7cm;
+        margin: 2cm;
+      }
+
+      .no-print {
+        display: none;
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .table-borderless th,
+    .table-borderless td {
+      border: none;
+    }
+
+    .stamp {
+      width: 80px;
+      opacity: 0.6;
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <?php include '../admin/admin_header.php'; ?>
+
+  <div class="container mt-5">
+    <div class="text-center mb-4">
+      <img class="mt-4" src="../img/favicon.png" alt="Logo" width="40">
+      <h2 class="display-5">Invoice Pesanan Coffee Shop</h2>
+      <p class="text-muted">Nomor Pesanan: <?= htmlspecialchars($order['order_id']) ?></p>
+    </div>
+
+    <hr class="bg-dark">
+
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th colspan="2" class="section-title">Detail Pesanan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Nama Pelanggan:</th>
+              <td><?= htmlspecialchars($order['customer_name']) ?></td>
+            </tr>
+            <tr>
+              <th>Nomor Meja:</th>
+              <td><?= htmlspecialchars($order['table_number']) ?></td>
+            </tr>
+            <tr>
+              <th>Daftar Item:</th>
+              <td>
+                <?php foreach ($order['items'] as $item): ?>
+                  <?= htmlspecialchars($item['name']) ?> (x<?= $item['quantity'] ?>)<br>
+                <?php endforeach; ?>
+              </td>
+            </tr>
+            <tr>
+              <th>Total Harga:</th>
+              <td>Rp <?= number_format($order['total_price'], 0, ',', '.') ?></td>
+            </tr>
+            <tr>
+              <th>Status Pesanan:</th>
+              <td><?= htmlspecialchars(ucwords($order['status'])) ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-6">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th colspan="2" class="section-title">Detail Pembayaran</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php if ($order['payment_id']): ?>
+              <tr>
+                <th>ID Pembayaran:</th>
+                <td><?= htmlspecialchars($order['payment_id']) ?></td>
+              </tr>
+              <tr>
+                <th>Metode Pembayaran:</th>
+                <td><?= htmlspecialchars($order['payment_method']) ?></td>
+              </tr>
+              <tr>
+                <th>Jumlah Pembayaran:</th>
+                <td>Rp <?= number_format($order['amount'], 0, ',', '.') ?></td>
+              </tr>
+              <tr>
+                <th>Status Pembayaran:</th>
+                <td><?= htmlspecialchars(ucwords($order['payment_status'])) ?></td>
+              </tr>
+              <tr>
+                <td colspan="2"><img src="../img/stamp.png" class="stamp" alt="Stempel"></td>
+              </tr>
+            <?php else: ?>
+              <tr>
+                <td colspan="2" class="text-warning">Pembayaran belum dilakukan.</td>
+              </tr>
+            <?php endif; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="bg-dark">
+    <div class="no-print text-center mt-4 mb-4">
+      <button class="btn btn-primary" onclick="window.print();"><i class="fa fa-print"></i></button>
+      <button onclick="window.history.back();" class="btn btn-info">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+    </div>
+  </div>
+
+  <?php include '../footer.php'; ?>
+</body>
+
+</html>
